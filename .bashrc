@@ -44,5 +44,9 @@ alias hyperfan-performance="sudo sh -c 'echo 0 > /sys/devices/platform/asus-nb-w
 alias hyperfan-silent="sudo sh -c 'echo 2 > /sys/devices/platform/asus-nb-wmi/throttle_thermal_policy'"
 # Set ASUS Hyperfan profile to Silent (Minimum fan speed)
 
-alias kexec-reboot="sudo kexec -l /boot/vmlinuz-$(uname -r) --initrd=/boot/initramfs-$(uname -r).img --reuse-cmdline && reboot"
+alias kexec-reboot="sudo sh -c 'kexec -l /boot/vmlinuz-$(uname -r) --initrd=/boot/initramfs-$(uname -r).img --reuse-cmdline && reboot'"
 # Fast Kernel reboot
+
+export RANGER_LOAD_DEFAULT_RC=false
+export EDITOR=nvim
+export PATH="$HOME/.local/bin:$PATH"
