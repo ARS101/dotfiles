@@ -1,0 +1,125 @@
+{
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "security.workspace.trust.enabled": false,
+  "python.defaultInterpreterPath": "/usr/bin/python3.11",
+  "python.autoComplete.extraPaths": [
+    "./.venv/lib/python3.11/site-packages/",
+    "./.venv/lib64/python3.11/site-packages/",
+    "/home/d3f4u1t/.local/lib/python3.11/site-packages/",
+    "/usr/lib/python3.11/site-packages",
+    "/usr/lib64/python3.11/site-packages/"
+  ],
+  "python.analysis.extraPaths": [
+    "./.venv/lib/python3.11/site-packages/",
+    "./.venv/lib64/python3.11/site-packages/",
+    "/home/d3f4u1t/.local/lib/python3.11/site-packages/",
+    "/usr/lib/python3.11/site-packages",
+    "/usr/lib64/python3.11/site-packages/",
+    "."
+  ],
+  "terminal.external.linuxExec": "konsole",
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "python.linting.mypyEnabled": true,
+  "python.linting.banditEnabled": true,
+  "python.linting.pycodestyleArgs": [
+    "--max-line-length=88",
+    "--max-doc-length=79"
+  ],
+  "python.formatting.autopep8Args": [
+    "--max-line-length=88"
+  ],
+  "python.analysis.autoImportCompletions": true,
+  "workbench.colorTheme": "6106e529-efef-444d-9db0-a9b0b444cf1b",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.formatting.provider": "black",
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
+  "editor.rulers": [
+    {
+      "column": 72,
+      "color": "#313131"
+    },
+    {
+      "column": 79,
+      "color": "#40ff40"
+    },
+    {
+      "column": 88,
+      "color": "#ff4040"
+    }
+  ],
+  "python.linting.pycodestyleEnabled": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+  },
+  "dev.containers.dockerPath": "podman",
+  "vim.smartRelativeLine": true,
+  // Using the light mode
+  "indentRainbow.indicatorStyle": "light",
+  // we use a simple 1 pixel wide line
+  "indentRainbow.lightIndicatorStyleLineWidth": 3,
+  // the same colors as above but more visible
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,255,255,0.3)"
+  ],
+  "cSpell.diagnosticLevel": "Hint",
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+  "Lua.workspace.library": [
+    "~/.luarocks/share/lua/5.4/",
+    "~/.luarocks/lib/lua/5.4/",
+    "/usr/share/nvim/runtime/lua/",
+    "/usr/share/awesome/lib/",
+    "~/.local/share/nvim/lazy",
+  ],
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "powermode.enabled": true,
+  "editor.linkedEditing": true,
+  "background.customImages": [
+    "file:///home/d3f4u1t/Pictures/ARS_Excited_Transparent.png"
+  ],
+  "background.style": {
+    "background-size": "300px 300px",
+    "opacity": 0.6,
+  },
+  "background.useDefault": false,
+  "vscode-pets.petSize": "small",
+  "vscode-pets.throwBallWithMouse": true,
+  "vscode-pets.theme": "forest",
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "powermode.shake.enabled": false,
+  "Lua.diagnostics.globals": [
+    "awesome",
+    "client",
+    "screen",
+    "root"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "Lua.workspace.checkThirdParty": false,
+}
