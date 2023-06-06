@@ -474,7 +474,7 @@ root.keys(globalkeys)
 -- {{{ Rules
 
 -- Rules to apply to new clients (through the "manage" signal).
-awful.rules = {
+awful.rules.rules = {
 	-- All clients will match this rule.
 	{
 		rule = {},
@@ -598,6 +598,7 @@ end)
 client.connect_signal("focus", function(_client)
 	_client.border_color = beautiful.border_focus
 end)
+
 client.connect_signal("unfocus", function(_client)
 	_client.border_color = beautiful.border_normal
 end)
