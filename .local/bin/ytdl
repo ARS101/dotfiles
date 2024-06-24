@@ -1,0 +1,66 @@
+#!/bin/bash
+
+DEFAULT_VIDCODE="136"
+DEFAULT_AUDCODE="250"
+
+while getopts "a:v:U:ho" options; do
+    case "$options" in
+        v)
+            vid_code="$OPTARG"
+        ;;
+        a)
+            aud_code="$OPTARG"
+        ;;
+        U)
+            link="$OPTARG"
+        ;;
+        o)
+            list_options="true"
+        ;;
+        h)
+            echo "yt-merge:"
+            echo "  -v  Video quality (Enter video code)"
+            echo "  -a  Audio quality (Enter audio code)"
+            echo "  -U  Youtube link"
+            echo "  -o  Check for options"
+            echo "  -h  Show help"
+            exit
+        ;;
+        *)
+            echo "yt-merge:"
+            echo "Invalid option"
+            echo ""
+            echo "  -v  Video quality (Enter video code)"
+            echo "  -a  Audio quality (Enter audio code)"
+            echo "  -U  Youtube link"
+            echo "  -o  Check for options"
+            echo "  -h  Show help"
+            exit
+    esac
+done
+
+
+vid_code=${vid_code:-$DEFAULT_VIDCODE}
+aud_code="${aud_code:-$DEFAULT_AUDCODE}"
+link="${@: -1}"
+curr_tty="$(tty)"
+
+if [ -z "$(echo "$link" | grep -E "https?://.*")" ]; then
+    echo "You must specify a link";
+    exit
+fi
+
+if [ -n "$list_options" ]; then
+    yt-dlp -F "$link"
+    exit
+fi
+
+vid_file="$(yt-dlp -f "$vid_code" "$link" | tee "$curr_tty" | grep "Destination" | sed -E "s/.*? Destination: (.*)/\1/g")"
+aud_file="$(yt-dlp -f "$aud_code" "$link" | tee "$curr_tty" | grep "Destination" | sed -E "s/.*? Destination: (.*)/\1/g")"
+
+ffmpeg -i "$vid_file" -i "$aud_file" -acodec copy -vcodec copy "temp_$vid_file"
+
+rm "$vid_file"
+rm "$aud_file"
+
+mv "temp_$vid_file" "$vid_file"
